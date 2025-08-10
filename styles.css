@@ -108,7 +108,7 @@ body {
 
 .single-cell-row {
     grid-column: 1 / -1; /* Spans all columns */
-    background-color: lightgray; /* Optional: Background color for visibility */
+    background-color: rgba(255, 154, 21, 0.671); /* Beige background for the bottom-most single cell */
     text-align: center; /* Optional: Centers text */
 }
 
@@ -131,8 +131,12 @@ h2 {
     /* Optional: Adds rounded corners */
 }
 
-.item1, .item2{
-    flex-direction: column;
+.item1, .item2, .item5, .item6, .item7 {
+    background-color: lightblue; /* Light blue background for these items */
+}
+
+.item3, .item4 {
+    background-color: rgba(255, 154, 21, 0.671); /* Beige background for these items */
 }
 
 .item, .item4 {
