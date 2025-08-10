@@ -113,12 +113,13 @@ body {
 }
 
 h2 {
-    padding: 10px 10px;
+    padding: 10px;
     margin: 0;
     color: rgb(0, 0, 71);
 }
 
 .item {
+    position: relative;
     display: flex;
     /* justify-content: center; */
     /* align-items: center; */
@@ -134,20 +135,30 @@ h2 {
     flex-direction: column;
 }
 
-.item.item4 {
+.item, .item4 {
     display: flex;
     flex-direction: column; /* Ensures vertical stacking of children */
-    gap: 20px; /* Adds spacing between the heading and the graphs */
+    gap: 5px; /* Adds spacing between the heading and the graphs */
+}
+
+.item3 {
+    display: flex;
+    flex-direction: column; /* Stack heading and grid vertically */
+    gap: 20px; /* Add spacing between heading and grid */
+}
+.item6{
+    grid-row: span 2;
 }
 
 .hr {
-    position: relative;
+    /* position: relative; */
     display: grid;
     grid-template-columns: 3fr 1fr;
     margin-right: 30px;
 }
 
 .small-line {
+    /* position: absolute; */
     height: 3px;
     background-color: rgba(0, 0, 139, 0.466);
     width: 100%;
@@ -187,6 +198,25 @@ h2 {
     left: 50%;
     width: 100px;
     height: 100px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.conic-graph1 {
+    /* Styles for the conic graph */
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin-left: 20px;
+    border-radius: 50%; /* Makes it circular */
+}
+.conic-graph1::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
     background: white;
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -333,7 +363,7 @@ h2 {
     gap: 10px; /* Adds spacing between the title and the graph */
 }
 
-.graph-item h3 {
+.graph-item h4 {
     font-size: 18px;
     color: rgb(0, 0, 71); /* Matches the heading color */
     margin: 0;
@@ -355,7 +385,7 @@ h2 {
 
 .graph3 {
     background: conic-gradient(
-        rgb(255, 81, 0) 0% 7%, /* Minority percentage */
+        #ff5100 0% 7%, /* Minority percentage */
         lightgray 7% 100%      /* Majority percentage */
     );
 }
@@ -406,4 +436,150 @@ h2 {
 .designation {
     font-size: 14px;
     color: gray;
+    padding-bottom: 30px;
+}
+
+.horizontal-bar-chart {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.25fr 3fr 1fr; /* Column 3 is larger for the bar chart */
+    grid-template-rows: repeat(6, 1fr); /* 6 equal rows */
+    gap: 10px; /* Space between grid items */
+    margin-top: 20px; /* Space above the chart */
+}
+
+.label {
+    grid-column: 1 / 2; /* First column */
+    grid-row: span 2; /* Spans 2 rows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(0, 0, 71);
+    text-align: center;
+    rotate: -90deg;
+    margin-left: 40px;
+}
+
+.brace {
+    grid-column: 2 / 3; /* Second column */
+    grid-row: span 2; /* Spans 2 rows */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; /* Large font size for the brace */
+    color: gray;
+}
+
+.bar {
+    grid-column: 3 / 4; /* Third column */
+    display: flex;
+    align-items: center;
+    /* background-color: lightgray;  */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    height: 30px; /* Height of the bar */
+}
+
+.bar-fill {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 81, 0); /* Color of the filled portion */
+    height: 100%; /* Fills the height of the bar */
+    /* border-radius: 5px 0 0 5px; */
+    z-index: 3;
+}
+
+.spacer {
+    grid-column: 4 / 5; /* Fourth column */
+    /* grid-row: span 2;  */
+}
+
+.bar2{
+    display: flex;
+    align-items: center;
+    background-color: rgb(196, 196, 196);
+}
+.bar1{
+    display: flex;
+    align-items: center;
+    background-color: rgb(196, 196, 196);
+}
+.bar3{
+    display: flex;
+    align-items: center;
+    background-color: rgb(83, 80, 80);
+}
+.bar4{
+    display: flex;
+    align-items: center;
+    background-color: rgb(133, 129, 129);
+}
+.bar5{
+    display: flex;
+    align-items: center;
+    background-color: rgb(57, 214, 219);
+}
+.bar6{
+    display: flex;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 0.589);
+}
+
+.bar-line1{
+    position: absolute;
+    height: 110%;
+    width: 1px;
+    background-color: lightgray;
+    left: 434px;
+    bottom: 1px;
+}
+.bar-line2{
+    position: absolute;
+    height: 110%;
+    width: 1px;
+    background-color: lightgray;
+    left: 167px;
+    bottom: 1px;
+    z-index: 2;
+}
+.bar-line3{
+    position: absolute;
+    height: 110%;
+    width: 1px;
+    background-color: lightgray;
+    left: 277px;
+    bottom: 1px;
+}
+.bar-line4{
+    position: absolute;
+    height: 110%;
+    width: 1px;
+    background-color: lightgray;
+    left: 566px;
+    bottom: 1px;
+}
+/* .bar-line{
+    position: absolute;
+    height: 110%;
+    width: 2px;
+    background-color: lightgray;
+    left: 100px;
+} */
+
+.b-2020, .b-2019 {
+    padding-left: 10px;
+}
+.fa-bulleted-points li, .gs-bulleted-points li{
+    padding-left: 20px;
+    margin-bottom: 3px;
+}
+
+.rev-heading h2{
+    width: 500px;
+}
+
+.amt-heading h4{
+    padding-left: 40px;
 }

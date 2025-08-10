@@ -44,3 +44,14 @@ body{
     bottom: 10px;
     left: 20px;
 }
+
+.test {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+    grid-template-rows: repeat(10, 1fr); /* 10 equal rows */
+    gap: 10px; /* Space between grid items */
+    width: 100%; /* Full width of the container */
+    height: 500px; /* Adjust height as needed */
+    background-color: #f9f9f9; /* Optional: Light background for visibility */
+    position: relative;
+}
